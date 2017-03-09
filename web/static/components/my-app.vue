@@ -2,8 +2,12 @@
   <div class="my-app">
     <h1>FarmVille Chat</h1>
     <ul v-for="message in messages">
-      <li>{{message}}</li>
+      <li>
+        <small>{{message.received_at}}</small>: {{message.body}}
+      </li>
     </ul>
+
+    <input type="text" v-model="message" v-on:keyup.13="sendMessage">
   </div>
 </template>
 
