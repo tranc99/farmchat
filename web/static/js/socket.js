@@ -90,7 +90,14 @@ new Vue({
       .receive("error", response => {
         console.log("Unable to join the channel", response);
       })
-  }
+  },
+
+  data() {
+    return {
+      message: "",
+      messages: []
+    };
+  },
 });
 
 
