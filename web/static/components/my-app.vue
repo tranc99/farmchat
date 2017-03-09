@@ -11,7 +11,8 @@
   export default {
     data() {
       return {
-        messages: ["How are you", "Let's get rockin!"]
+        channel: null,
+        messages: []
       }
     }
 
