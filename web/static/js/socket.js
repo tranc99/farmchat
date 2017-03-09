@@ -71,9 +71,28 @@ Vue.component('my-app', MyApp);
 // create the top-level view
 new Vue({
   el: '#app',
+
   render(createElement) {
     return createElement(MyApp, {})
+  },
+
+  mounted() {
+    this.channel = socket.channel("room:lobby", {});
+    this.channel.on("new_msg", payload => {
+      payload.received_at = Date();
+      this.messages.push(payload);
+    });
+
+    this.channel.join()
+      .receive("ok", response => {
+        console.log("Joined successfully", response);
+      })
+      .receive("error", response => {
+        console.log("Unable to join the channel", response);
+      })
   }
 });
+
+
 
 export default socket
