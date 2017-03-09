@@ -13,10 +13,15 @@
 
 <script>
   export default {
+    computed: {
+      messages() {
+        return this.$parent.messages;
+      }
+    },
+    
     data() {
       return {
         channel: null,
-        messages: [],
         message: ""
       }
     },
