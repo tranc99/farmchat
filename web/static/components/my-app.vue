@@ -29,6 +29,22 @@
       sendMessage() {
         this.channel.push("new_msg", {body: this.message });
         this.message = "";
+      },
+
+      connectToChat() {
+        this.channel = socket.channel("room:lobby", {});
+        this.channel.on("new_msg", payload => {
+          payload.received_at = Date();
+          this.messages.push(payload);
+        });
+
+        this.channel.join()
+          .receive("ok", response => {
+            console.log("Joined successfully", response);
+          })
+          .receive("error", response => {
+            console.log("Unable to join the channel", response);
+          });
       }
     }
 
