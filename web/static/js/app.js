@@ -19,15 +19,4 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
-
-import Vue from "vue"
-import MyApp from "../components/my-app.vue"
-
-Vue.component('my-app', MyApp);
-
-new Vue({
-  el: '#app',
-  render(createElement) {
-    return createElement(MyApp, {})
-  }
-});
+import socket from "./socket"
