@@ -18,10 +18,9 @@
         return this.$parent.messages;
       }
     },
-    
+
     data() {
       return {
-        channel: null,
         message: ""
       }
     },
