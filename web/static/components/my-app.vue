@@ -16,7 +16,8 @@
     data() {
       return {
         channel: null,
-        messages: []
+        messages: [],
+        message: ""
       }
     }
 
