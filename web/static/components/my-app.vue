@@ -19,6 +19,13 @@
         messages: [],
         message: ""
       }
+    },
+
+    methods: {
+      sendMessage() {
+        this.$parent.channel.push("new_msg", {body: this.message });
+        this.message = "";
+      }
     }
 
   }
