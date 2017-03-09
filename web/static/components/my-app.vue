@@ -32,7 +32,9 @@
       },
 
       connectToChat() {
-        this.channel = socket.channel("room:lobby", {});
+        this.socket = new Socket("/socket", {params: {token: window.userToken}});
+        this.socket.connect();
+        this.channel = this.socket.channel("room:lobby", {});
         this.channel.on("new_msg", payload => {
           payload.received_at = Date();
           this.messages.push(payload);
