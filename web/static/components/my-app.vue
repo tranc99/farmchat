@@ -13,15 +13,12 @@
 
 <script>
   export default {
-    computed: {
-      messages() {
-        return this.$parent.messages;
-      }
-    },
-
+  
     data() {
       return {
-        message: "",
+        socket: null,
+        channel: null,
+        messages: [],
       }
     },
 
