@@ -20,3 +20,33 @@ import "phoenix_html"
 
 // import socket from "./socket"
 import socket from "./socket"
+
+
+import Vue from "vue"
+
+// local imports
+import MyApp from "../components/my-app.vue"
+
+
+// create the main component
+Vue.component('my-app', MyApp);
+
+// create the top-level view
+new Vue({
+  el: '#app',
+
+  render(createElement) {
+    return createElement(MyApp, {})
+  },
+
+  mounted() {
+
+  },
+
+  data() {
+    return {
+      message: "",
+      messages: []
+    };
+  },
+});

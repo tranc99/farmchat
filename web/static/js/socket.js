@@ -5,11 +5,6 @@
 // and connect at the socket path in "lib/my_app/endpoint.ex":
 import {Socket} from "phoenix"
 
-import Vue from "vue"
-
-// local imports
-import MyApp from "../components/my-app.vue"
-
 
 // let socket = new Socket("/socket", {params: {token: window.userToken}})
 
@@ -64,29 +59,6 @@ import MyApp from "../components/my-app.vue"
 // channel.join()
 //   .receive("ok", resp => { console.log("Joined successfully", resp) })
 //   .receive("error", resp => { console.log("Unable to join", resp) })
-
-// create the main component
-Vue.component('my-app', MyApp);
-
-// create the top-level view
-new Vue({
-  el: '#app',
-
-  render(createElement) {
-    return createElement(MyApp, {})
-  },
-
-  mounted() {
-
-  },
-
-  data() {
-    return {
-      message: "",
-      messages: []
-    };
-  },
-});
 
 
 

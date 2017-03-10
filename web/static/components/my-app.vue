@@ -12,8 +12,10 @@
 </template>
 
 <script>
-  export default {
+  import {Socket} from "phoenix"
   
+  export default {
+
     data() {
       return {
         socket: null,
