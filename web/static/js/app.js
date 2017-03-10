@@ -43,10 +43,10 @@ new Vue({
 
   },
 
-  data() {
-    return {
-      message: "",
-      messages: []
-    };
-  },
+  // data() {
+  //   return {
+  //     message: "",
+  //     messages: []
+  //   };
+  // },
 });
